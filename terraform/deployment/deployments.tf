@@ -1,24 +1,24 @@
-# PORTFOLIO DEPLOYMENT
+# Blog DEPLOYMENT
 
-# Create kubernetes Name space for portfolio
+# Create kubernetes Name space for blog
 
-resource "kubernetes_namespace" "kube-namespace-portfolio" {
+resource "kubernetes_namespace" "kube-namespace-blog" {
   metadata {
-    name = "portfolio-namespace"
+    name = "blog-namespace"
     labels = {
-      app = "portfolio"
+      app = "blog"
     }
   }
 }
 
-# Create kubernetes deployment for portfolio
+# Create kubernetes deployment for blog
 
-resource "kubernetes_deployment" "kube-deployment-portfolio" {
+resource "kubernetes_deployment" "kube-deployment-blog" {
   metadata {
-    name      = "portfolio"
-    namespace = kubernetes_namespace.kube-namespace-portfolio.id
+    name      = "blog"
+    namespace = kubernetes_namespace.kube-namespace-blog.id
     labels = {
-      app = "portfolio"
+      app = "blog"
     } 
   }
 
@@ -26,19 +26,19 @@ resource "kubernetes_deployment" "kube-deployment-portfolio" {
     replicas = 1
     selector {
       match_labels = {
-        app = "portfolio"
+        app = "blog"
       }
     }
     template {
       metadata {
         labels = {
-          app = "portfolio"
+          app = "blog"
         }
       }
       spec {
         container {
           image = var.docker-image
-          name  = "portfolio"
+          name  = "blog"
           env {
             name  = "MYSQL_HOST"
             value = "mysql"
@@ -53,16 +53,16 @@ resource "kubernetes_deployment" "kube-deployment-portfolio" {
   }
 }
 
-# Create kubernetes service for portfolio
+# Create kubernetes service for blog
 
-resource "kubernetes_service" "kube-service-portfolio" {
+resource "kubernetes_service" "kube-service-blog" {
   metadata {
-    name      = "portfolio"
-    namespace = kubernetes_namespace.kube-namespace-portfolio.id
+    name      = "blog"
+    namespace = kubernetes_namespace.kube-namespace-blog.id
   }
   spec {
     selector = {
-      app = "portfolio"
+      app = "blog"
     }
     port {
       name = "metrics"
@@ -78,12 +78,12 @@ resource "kubernetes_service" "kube-service-portfolio" {
   }
 }
 
-# MYSQL database for portfolio app
+# MYSQL database for blog app
 
-resource "kubernetes_deployment" "portfolio-db" {
+resource "kubernetes_deployment" "blog-db" {
   metadata {
     name = "mysql"
-    namespace = kubernetes_namespace.kube-namespace-portfolio.id
+    namespace = kubernetes_namespace.kube-namespace-blog.id
     labels = {
       app = "mysql"
     }
@@ -135,10 +135,10 @@ resource "kubernetes_deployment" "portfolio-db" {
   }
 }
 
-resource "kubernetes_service" "porftolio-db-service" {
+resource "kubernetes_service" "blog-db-service" {
   metadata {
     name = "mysql"
-    namespace = kubernetes_namespace.kube-namespace-portfolio.id
+    namespace = kubernetes_namespace.kube-namespace-blog.id
   }
 
   spec {
@@ -203,10 +203,10 @@ resource "kubernetes_service" "kube-service-socks" {
   }
 }
 
-# Print out loadbalancer DNS hostname for portfolio deployment
+# Print out loadbalancer DNS hostname for blog deployment
 
-output "portfolio_load_balancer_hostname" {
-  value = kubernetes_service.kube-service-portfolio.status.0.load_balancer.0.ingress.0.hostname
+output "blog_load_balancer_hostname" {
+  value = kubernetes_service.kube-service-blog.status.0.load_balancer.0.ingress.0.hostname
 }
 
 # Print out loadbalancer DNS hostname for socks deployment

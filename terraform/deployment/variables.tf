@@ -5,17 +5,21 @@ variable "cluster" {
 variable "app" {
   type        = string
   description = "Name of application"
-  default     = "portfolio"
+  default     = "blog"
 }
 
 variable "region" {
   default = "us-east-1"
 }
 
+variable "domain_name" {
+  default = "onyekachukwuejiofornweke.me"
+}
+
 variable "docker-image" {
   type        = string
   description = "name of the docker image to deploy"
-  default     = "abdulbarri/portfolio:1.0"
+  default     = "onyekachukwu/blog:1.0"
 }
 
 variable "mysql-password" {
