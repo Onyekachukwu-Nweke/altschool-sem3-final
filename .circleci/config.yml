@@ -76,7 +76,7 @@ jobs:
             export MYSQL_PSSWRD="mysql-password=${MYSQL_PASSWORD}"
             aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
             aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
-            cd terraform-files/deployment/
+            cd terraform/deployment/
             terraform init
             terraform plan -var $DOCKER_IMAGE -var $MYSQL_PSSWRD -out=plan.txt
             terraform apply plan.txt
