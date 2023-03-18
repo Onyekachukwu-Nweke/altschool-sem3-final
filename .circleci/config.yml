@@ -136,7 +136,7 @@ workflows:
             branches:
               only: [create-backend]
       - create_infrastructure:
-          requires: [build_docker_image]
+          requires: [build_docker_image, create_backend_state_store]
       - deploy_applications:
           requires: [create_infrastructure]
       - configure_monitoring:
