@@ -22,6 +22,11 @@ resource "helm_release" "prometheus" {
     value = false
   }
 
+  set {
+    name  = "service.type"
+    value = "LoadBalancer"
+  }
+
   # You can provide a map of value using yamlencode. Don't forget to escape the last element after point in the name
   set {
     name = "server\\.resources"
