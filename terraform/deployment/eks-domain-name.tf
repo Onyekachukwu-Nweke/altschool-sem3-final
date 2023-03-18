@@ -34,7 +34,7 @@ resource "aws_route53_record" "blog-record" {
 
 resource "aws_route53_record" "socks-record" {
   zone_id = aws_route53_zone.socks-domain-name.zone_id
-  name    = "socks.${var.domain-name}"
+  name    = "socks.${var.domain_name}"
   type    = "A"
 
   alias {
