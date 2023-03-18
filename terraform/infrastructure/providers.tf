@@ -18,18 +18,6 @@ terraform {
   }
 }
 
-# Terraform Cloud Eks Workspace
-
-# terraform {
-#   cloud {
-#     organization = "Abdul-Barri"
-
-#     workspaces {
-#       name = "infrastructure"
-#     }
-#   }
-# }
-
 terraform {
   backend "s3" {
     bucket = "terraform-state-081745096889"
