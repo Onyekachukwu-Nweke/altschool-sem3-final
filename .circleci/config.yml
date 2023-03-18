@@ -135,15 +135,15 @@ workflows:
           filters:
             branches:
               only: [create-backend]
-      - create_infrastructure:
-          requires: [build_docker_image]
-      - deploy_applications:
-          requires: [create_infrastructure]
-      - configure_monitoring:
-          requires: [deploy_applications]
-      - destroy_everything:
-          requires: [deploy_applications]
-          filters:
-            branches:
-              only: [destroy]
+      # - create_infrastructure:
+      #     requires: [build_docker_image, create_backend_state_store]
+      # - deploy_applications:
+      #     requires: [create_infrastructure]
+      # - configure_monitoring:
+      #     requires: [deploy_applications]
+      # - destroy_everything:
+      #     requires: [deploy_applications]
+      #     filters:
+      #       branches:
+      #         only: [destroy]
       
