@@ -59,7 +59,7 @@ The bucket and DynamoDB set up by the CircleCI Pipeline
 <h3>Provisioning a Monitoring system with Prometheus and Grafana</h3>
 <p>In the terraform, another folder called monitoring, has a series of yaml files (kubernetes manifest files) used to setup monitoring and alerting tools such as prometheus and grafana in the kubernetes </p>
 
-<p>In the grafana-svc and prometheus-svc files I changed ```NodePort``` to ```LoadBalancer```</p>
+<p>In the grafana-svc and prometheus-svc files I changed ``NodePort`` to ``LoadBalancer``</p>
 
 [prometheus]()
 
