@@ -31,28 +31,28 @@ The following tools where used for this project which are:
 
 The bucket and DynamoDB set up by the CircleCI Pipeline
 
-[s3_bucket]()
+![s3_bucket](/img/s3.png)
 
-[dynamodb]()
+![dynamodb](/img/dynamoDB.png)
 
 <h3>Setting up the Kubernetes, IAM, Metrics and Logging</h3>
 <p>In the same terraform folder, there is a folder called infrastructure, the files in the folder has the configuration to provision an EKS cluster, create the VPC, set up an IAM role to secure access to who interacts with the cluster and other networking dependencies like lb and security group.</p>
 
-[EKS_cluster](/img/eks.png)
+![EKS_cluster](/img/eks.png)
 
-[IAM_role]()
+![IAM_role](/img/iam.png)
 
-[VPC]()
+![VPC](/img/vpc.png)
 
-[Route Table](/img/)
+![Route Table](/img/rtb.png)
 
-[SG]()
+![SG](/img/sg.png)
 
-[ASG]()
+![ASG](/img/asg.png)
 
 <b>Also I setted up AWS Cloudwatch for logging and Metrics of the EKS cluster</b>
 
-[cloudwatch]()
+![cloudwatch](/img/cw.png)
 
 <h3>Deployment of Application</h3>
 <p>This folder contains the deployment files which I used to setup domain name for the web application and the microservice application and also the kubernetes manifest file (```complete-demo.yaml```) used to install the apllication on the cluster and exposing of ports used in the various applications.</p>
@@ -65,7 +65,7 @@ The bucket and DynamoDB set up by the CircleCI Pipeline
 ## Step2: Dockerization of Udagram
 <p>In the udagram-app folder, there is a dockerfile used to dockerize the application and push to docker through the pipeline</p>
 
-[dockerhub]()
+![dockerhub](/img/docker.png)
 
 ## Step3: CI/CD Pipeline with CircleCI
 CI/CD was implemented for this project using `CircleCI`. The code for the CI/CD pipeline can be found in the `.circleci` folder which contains a `config.yml` file containing the code for the CI/CD pipeline. The CI/CD pipeline has six jobs;
@@ -99,4 +99,14 @@ The images shows the successful execution of the jobs in the CI/CD pipeline afte
 ![prometheus](/img/prometheus.png)
 
 - Grafana Access Point: <a target=_blank href="">Grafana url</a>
-[grafana]()
+![grafana](/img/grafana.png)
+
+## View of Deployed Applications
+
+- <a href="https://blog.onyekachukwuejiofornweke.me/">Blog Url</a>
+
+![blog](/img/blog.png)
+
+- <a href="https://socks.onyekachukwuejiofornweke.me/">Socks Url</a>
+
+![socks](/img/socks.png)
