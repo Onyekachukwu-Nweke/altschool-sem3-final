@@ -101,6 +101,11 @@ The images shows the successful execution of the jobs in the CI/CD pipeline afte
 - Grafana Access Point: <a target=_blank href="">Grafana url</a>
 ![grafana](/img/grafana.png)
 
+## Step5: Encryption of Sensitive Data in the Pipeline
+<p>I used CircleCI's envrionment variable to store sensitive data</p>
+
+![env](/img/env.png)
+
 ## View of Deployed Applications
 
 - <a href="https://blog.onyekachukwuejiofornweke.me/">Blog Url</a>
