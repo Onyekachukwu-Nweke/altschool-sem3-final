@@ -92,13 +92,13 @@ The images shows the successful execution of the jobs in the CI/CD pipeline afte
 ## Step4: Provisioning a Monitoring system with Prometheus and Grafana
 <p>In the terraform, another folder called monitoring, has a series of yaml files (kubernetes manifest files) used to setup monitoring and alerting tools such as prometheus and grafana in the kubernetes. Using the cloud watch logs to analyze system performance/ </p>
 
-<p>In the grafana-svc and prometheus-svc files I changed <code>NodePort</code> to ``LoadBalancer``</p>
+<p>In the grafana-svc and prometheus-svc files I changed <code>NodePort</code> to `LoadBalancer` </p>
 
-- Prometheus Access Point: <a target=_blank href="http://prometheus.onyekachukwuejiofornweke.me:9090/targets">Prometheus url</a>
+- Prometheus Access Point: <a target=_blank href="https://prometheus.onyekachukwuejiofornweke.me:9090/targets">Prometheus url</a>
 
 ![prometheus](/img/prometheus.png)
 
-- Grafana Access Point: <a target=_blank href="">Grafana url</a>
+- Grafana Access Point: <a target=_blank href="https://grafana.onyekachukwuejiofornweke.me:9090/targets">Grafana url</a>
 ![grafana](/img/grafana.png)
 
 ## Step5: Encryption of Sensitive Data in the Pipeline

@@ -145,5 +145,5 @@ workflows:
           requires: [deploy_applications]
           filters:
             branches:
-              only: [destroy]
+              only: [main]
       
