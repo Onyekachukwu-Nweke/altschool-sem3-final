@@ -142,7 +142,7 @@ workflows:
       - configure_monitoring:
           requires: [deploy_applications]
       - destroy_everything:
-          requires: [deploy_applications]
+          requires: [configure_monitoring]
           filters:
             branches:
               only: [main]
